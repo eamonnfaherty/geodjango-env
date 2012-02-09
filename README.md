@@ -1,15 +1,14 @@
-# geodjango environment
-
-Out of the box environment for
-[Geo Django](https://docs.djangoproject.com/en/1.3/ref/contrib/gis/) and more (coming soon)!
-
-Using
-[Chef](http://wiki.opscode.com/display/chef/Home)
-[Vagrant](http://vagrantup.com/)
+# What is it:
+It is an 'out of the box' vm configured for [Geo Django](https://docs.djangoproject.com/en/1.3/ref/contrib/gis/), using [Chef](http://wiki.opscode.com/display/chef/Home) and [Vagrant](http://vagrantup.com/).
+* It installs and sets up postgresql with postgis
+* It installs nginx
+* It installs some utils (vim, screen and git)
+* It installs some useful python utils (pip, virtualenv and virtualenvwrapper)
+* It fixes VirtualBox issue where shared folders to not work due to addon/guesttools not being installed
 
 ## What it builds/prepares:
 * apt - updates
-* apt-upgrade upgrades vm packages
+* apt-upgrade upgrades vm packages (disabled by default)
 * build-essential
 * database - postgres + postgis
 * geos - installs
@@ -30,16 +29,12 @@ Using
 * user setup
 * fabric template for project creation / deployment
 
-Make sure you customize `cookbooks/database/attributes/default.rb`
-to use your actual database user and database name.
-
-To try the setup out, do:
+## How to use it
 
 	$ git clone https://github.com/eamonnfaherty/geodjango-env.git
-	$ cd chef-geodjango
+	$ cd geodjango-env
+	$ vim cookbooks/database/attributes/default.rb #edit db conf
 	$ vagrant up
 
-That'll give you a virtual machine with a database ready to go.
-
-
-* adapted from https://github.com/caffeinehit/chef-geodjango Thank you guys!
+## Thanks to
+* The guys at caffeinehit for their version which I used as a base : https://github.com/caffeinehit/chef-geodjango Thank you guys!
