@@ -17,9 +17,10 @@
 # limitations under the License.
 #
 
-execute "sudo apt-get install dkms build-essential linux-headers-generic linux-headers-2.6.32-33-generic" do
-  command "sudo apt-get install dkms build-essential linux-headers-generic linux-headers-2.6.32-33-generic"
-end
+package "dkms"
+package "build-essential"
+package "linux-headers-generic"
+package "linux-headers-2.6.32-33-generic"
 
 execute " /etc/init.d/vboxadd setup" do
   command " /etc/init.d/vboxadd setup"
