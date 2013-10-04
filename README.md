@@ -30,8 +30,11 @@ It is an 'out of the box' vm configured for [Geo Django](https://docs.djangoproj
 * user setup
 * fabric template for project creation / deployment
 
-### How to use it
+### Notes
+I am using the default lucid32 box with vagrant.  This is the only box I have tested this on.  Feel free to report back your experiences on other boxes and I will keep this updated.
 
+### How to use it
+	$ vagrant box add lucid32 http://files.vagrantup.com/lucid32.box
 	$ git clone https://github.com/eamonnfaherty/geodjango-env.git
 	$ cd geodjango-env
 	$ vim cookbooks/database/attributes/default.rb #edit db conf
